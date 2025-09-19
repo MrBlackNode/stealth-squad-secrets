@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Users, TrendingUp, Lock, Eye, EyeOff, Zap } from "lucide-react";
+import { Users, TrendingUp, Lock, Eye, EyeOff, Zap, Shield } from "lucide-react";
 import { useAccount } from 'wagmi';
 import { useStealthSquadContract } from '@/hooks/useContract';
 import { useFHEOperations } from '@/lib/fhe-utils';
