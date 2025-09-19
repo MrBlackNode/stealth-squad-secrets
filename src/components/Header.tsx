@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Wallet, Shield, Trophy } from "lucide-react";
+import { Wallet, Trophy, Users, BarChart3, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount } from 'wagmi';
@@ -14,7 +14,7 @@ export const Header = () => {
         <div className="flex items-center space-x-4">
           <div className="relative">
             <img src={logo} alt="Stealth Squad Secrets Logo" className="w-10 h-10" />
-            <Shield className="w-3 h-3 absolute -top-1 -right-1 text-green-500" />
+            <div className="w-3 h-3 absolute -top-1 -right-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse"></div>
           </div>
           <div>
             <h1 className="text-xl font-bold text-stadium">Stealth Squad Secrets</h1>
@@ -27,17 +27,25 @@ export const Header = () => {
             <Trophy className="w-4 h-4" />
             Leagues
           </Link>
-          <Link to="/trades" className="text-foreground hover:text-accent transition-colors">Trades</Link>
-          <Link to="/lineups" className="text-foreground hover:text-accent transition-colors">Lineups</Link>
-          <Link to="/stats" className="text-foreground hover:text-accent transition-colors">Stats</Link>
-          <Link to="/learn" className="text-foreground hover:text-accent transition-colors">Learn FHE</Link>
+          <Link to="/trades" className="text-foreground hover:text-accent transition-colors flex items-center gap-1">
+            <Users className="w-4 h-4" />
+            Trades
+          </Link>
+          <Link to="/lineups" className="text-foreground hover:text-accent transition-colors flex items-center gap-1">
+            <BarChart3 className="w-4 h-4" />
+            Lineups
+          </Link>
+          <Link to="/stats" className="text-foreground hover:text-accent transition-colors flex items-center gap-1">
+            <Zap className="w-4 h-4" />
+            Stats
+          </Link>
         </nav>
         
         <div className="flex items-center gap-2">
           {isConnected && (
             <div className="hidden md:flex items-center gap-2 text-sm text-muted-foreground">
-              <Shield className="w-4 h-4 text-green-500" />
-              <span>FHE Protected</span>
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <span>Connected</span>
             </div>
           )}
           <ConnectButton 

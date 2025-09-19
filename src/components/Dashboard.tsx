@@ -1,13 +1,17 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Users, TrendingUp, Shield, Eye, EyeOff, Lock } from "lucide-react";
+import { Users, TrendingUp, Lock, Eye, EyeOff, Zap } from "lucide-react";
 import { useAccount } from 'wagmi';
 import { useStealthSquadContract } from '@/hooks/useContract';
+import { useFHEOperations } from '@/lib/fhe-utils';
+import { useState } from 'react';
 
 export const Dashboard = () => {
   const { isConnected, address } = useAccount();
-  const { createTeam, isPending } = useStealthSquadContract();
+  const { createTeam, addPlayer, proposeTrade, isPending } = useStealthSquadContract();
+  const { encryptTeam, encryptPlayer, encryptTrade } = useFHEOperations();
+  const [isCreatingTeam, setIsCreatingTeam] = useState(false);
   return (
     <section className="py-16 field-pattern">
       <div className="container mx-auto px-4">
@@ -19,6 +23,32 @@ export const Dashboard = () => {
               : 'Connect your wallet to access your encrypted fantasy teams'
             }
           </p>
+          {isConnected && (
+            <div className="mt-4">
+              <Button 
+                onClick={async () => {
+                  setIsCreatingTeam(true);
+                  try {
+                    const teamData = encryptTeam({
+                      name: `Team ${Date.now()}`,
+                      initialScore: 100,
+                      strategy: 'Aggressive'
+                    });
+                    await createTeam(teamData.encryptedName, teamData.encryptedScore, teamData.proof);
+                  } catch (error) {
+                    console.error('Error creating team:', error);
+                  } finally {
+                    setIsCreatingTeam(false);
+                  }
+                }}
+                disabled={isPending || isCreatingTeam}
+                className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600"
+              >
+                <Zap className="w-4 h-4 mr-2" />
+                {isCreatingTeam ? 'Creating Encrypted Team...' : 'Create FHE Team'}
+              </Button>
+            </div>
+          )}
         </div>
         
         <div className="grid lg:grid-cols-3 gap-8">

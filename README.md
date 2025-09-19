@@ -1,73 +1,187 @@
-# Welcome to your Lovable project
+# 🏈 Stealth Squad Secrets
 
-## Project info
+> **The Future of Fantasy Sports is Here** - Where Strategy Meets Privacy
 
-**URL**: https://lovable.dev/projects/53dd235a-1fe6-4677-9806-23da7bd4bd5e
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
 
-## How can I edit this code?
+## 🎯 What is Stealth Squad Secrets?
 
-There are several ways of editing your application.
+Stealth Squad Secrets revolutionizes fantasy sports by implementing **Fully Homomorphic Encryption (FHE)** to ensure complete privacy and security. Your strategies, trades, and team data remain encrypted until game time, creating a truly fair and private fantasy sports experience.
 
-**Use Lovable**
+### 🔐 Core Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/53dd235a-1fe6-4677-9806-23da7bd4bd5e) and start prompting.
+- **🛡️ FHE Encryption**: All sensitive data encrypted using cutting-edge homomorphic encryption
+- **👛 Multi-Wallet Support**: Seamless integration with Rainbow, MetaMask, and 50+ wallets
+- **🏆 Private Leagues**: Create and join leagues with complete anonymity
+- **🔄 Encrypted Trading**: Negotiate trades without revealing your strategy
+- **📊 Real-time Stats**: Live performance tracking with encrypted calculations
+- **🎮 Fair Play**: No strategy copying, pure skill-based competition
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🚀 Quick Start
 
-**Use your preferred IDE**
+### Prerequisites
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Node.js** 18+ ([Install with nvm](https://github.com/nvm-sh/nvm))
+- **npm** or **yarn**
+- **MetaMask** or compatible wallet
+- **Sepolia testnet ETH** for testing
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Installation
 
-Follow these steps:
+```bash
+# Clone the repository
+git clone https://github.com/MrBlackNode/stealth-squad-secrets.git
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Navigate to project directory
+cd stealth-squad-secrets
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Install dependencies
+npm install
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Environment Setup
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Create a `.env.local` file:
 
-**Use GitHub Codespaces**
+```env
+# Blockchain Configuration
+NEXT_PUBLIC_CHAIN_ID=11155111
+NEXT_PUBLIC_RPC_URL=https://sepolia.infura.io/v3/YOUR_INFURA_KEY
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Wallet Connect
+NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID=YOUR_PROJECT_ID
 
-## What technologies are used for this project?
+# Optional: Infura API Key
+NEXT_PUBLIC_INFURA_API_KEY=YOUR_INFURA_KEY
+```
 
-This project is built with:
+## 🏗️ Architecture
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Frontend Stack
+- **⚛️ React 18** - Modern React with concurrent features
+- **🔷 TypeScript** - Type-safe development
+- **⚡ Vite** - Lightning-fast build tool
+- **🎨 Tailwind CSS** - Utility-first styling
+- **🧩 shadcn/ui** - Beautiful, accessible components
 
-## How can I deploy this project?
+### Blockchain Integration
+- **🌈 RainbowKit** - Wallet connection made simple
+- **🔗 Wagmi** - React hooks for Ethereum
+- **⚡ Viem** - TypeScript interface for Ethereum
+- **🔐 FHE** - Fully Homomorphic Encryption
 
-Simply open [Lovable](https://lovable.dev/projects/53dd235a-1fe6-4677-9806-23da7bd4bd5e) and click on Share -> Publish.
+### Smart Contracts
+- **📜 Solidity** - Ethereum smart contracts
+- **🔒 FHE Integration** - Encrypted data operations
+- **🌐 Sepolia Testnet** - Testing environment
 
-## Can I connect a custom domain to my Lovable project?
+## 🛠️ Development
 
-Yes, you can!
+### Available Scripts
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```bash
+# Development server
+npm run dev
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Lint code
+npm run lint
+```
+
+### Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── ui/            # Reusable UI components
+│   └── ...            # Feature components
+├── hooks/             # Custom React hooks
+├── lib/               # Utility functions
+├── pages/             # Application pages
+└── assets/            # Static assets
+```
+
+## 🔒 Security & Privacy
+
+### FHE Implementation
+- **Encrypted Team Data**: Player selections remain private
+- **Private Trading**: Negotiate without revealing strategy
+- **Anonymous Scoring**: Fair competition without bias
+- **Secure Storage**: All data encrypted on-chain
+
+### Wallet Security
+- **Multi-signature Support**: Enhanced security for large transactions
+- **Hardware Wallet Compatible**: Ledger, Trezor support
+- **Session Management**: Secure wallet session handling
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+1. **Connect Repository**
+   - Import project from GitHub
+   - Configure build settings
+
+2. **Environment Variables**
+   - Add all required environment variables
+   - Configure for production
+
+3. **Deploy**
+   - Automatic deployment on push
+   - Custom domain support
+
+### Manual Deployment
+
+```bash
+# Build the project
+npm run build
+
+# Deploy to your preferred platform
+# The dist/ folder contains the production build
+```
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+
+### Development Workflow
+
+1. **Fork** the repository
+2. **Create** a feature branch
+3. **Make** your changes
+4. **Test** thoroughly
+5. **Submit** a pull request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🆘 Support
+
+- **📖 Documentation**: [Wiki](https://github.com/MrBlackNode/stealth-squad-secrets/wiki)
+- **🐛 Issues**: [GitHub Issues](https://github.com/MrBlackNode/stealth-squad-secrets/issues)
+- **💬 Discussions**: [GitHub Discussions](https://github.com/MrBlackNode/stealth-squad-secrets/discussions)
+
+## 🙏 Acknowledgments
+
+- **Zama** for FHE technology
+- **Rainbow** for wallet integration
+- **Vercel** for deployment platform
+- **OpenZeppelin** for smart contract security
+
+---
+
+**Built with ❤️ by the Stealth Squad Team**
+
+*Revolutionizing fantasy sports, one encrypted transaction at a time.*
