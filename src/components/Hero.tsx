@@ -1,16 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Lock, Zap, Users, Trophy } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-helmet.jpg";
 
 export const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
+      {/* Background with Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900">
         <div className="absolute inset-0 bg-background/80"></div>
       </div>
       

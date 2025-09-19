@@ -3,7 +3,7 @@ import { Wallet, Trophy, Users, BarChart3, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useAccount } from 'wagmi';
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.svg";
 
 export const Header = () => {
   const { isConnected } = useAccount();
